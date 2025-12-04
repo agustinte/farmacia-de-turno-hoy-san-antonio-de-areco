@@ -12,12 +12,12 @@
         Reemplaza 'G-XXXXXXXXXX' con tu ID de Medición de Google Analytics 
         (lo obtienes al crear una propiedad para tu sitio en Google Analytics).
     -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-022WMVQQQR"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-022WMVQQQR'); // Reemplazar con tu ID de Medición
+      gtag('config', 'G-XXXXXXXXXX'); // Reemplazar con tu ID de Medición
     </script>
     
     <!-- OPTIMIZACIÓN SEO: Meta descripción que aparece en los resultados de búsqueda -->
@@ -95,6 +95,14 @@
             </p>
         </header>
 
+        <!-- Bloque de Texto SEO Contextualizado con Estilo Mejorado (Verde) -->
+        <section class="mb-8 p-4 bg-green-50 border border-primary-green/50 rounded-xl shadow-md flex items-center">
+            <svg class="w-6 h-6 text-primary-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <p class="text-sm text-slate-700 leading-relaxed">
+                Bienvenido al servicio rápido de consulta de **Farmacias de Turno en San Antonio de Areco**. Aquí encontrará en tiempo real cuál es la **Farmacia de Guardia** con servicio **turno 24 horas** a partir de las 8 AM. Consulte la dirección, el teléfono y la ubicación exacta para recibir atención farmacéutica inmediata.
+            </p>
+        </section>
+
         <!-- Tarjeta de Farmacia de Turno -->
         <div id="pharmacy-card" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border-t-4 border-primary-green transition-all duration-300">
             <!-- El contenido se cargará aquí con JavaScript -->
@@ -104,6 +112,22 @@
         <div id="message-area" class="mt-8 text-center p-4 text-gray-500 hidden">
             Cargando la información...
         </div>
+
+        <!-- NUEVO: Bloque de Información de Horarios Diurnos Regulares (Azul) - Ubicado debajo del contenido principal -->
+        <section class="mt-8 mb-8 p-4 bg-blue-50 border border-blue-200 rounded-xl shadow-sm">
+            <h3 class="text-lg font-bold text-blue-800 mb-2 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Horarios de Atención Normal (Diurna)
+            </h3>
+            <p class="text-sm text-slate-700 leading-relaxed">
+                Todas las Farmacias en San Antonio de Areco atienden en los siguientes horarios:
+                <ul class="list-disc list-inside ml-2 mt-2 space-y-1">
+                    <li><span class="font-semibold">Lunes a Viernes:</span> 8:00 a 12:30 y de 16:00 a 19:30</li>
+                    <li><span class="font-semibold">Sábados:</span> 8:30 a 12:30</li>
+                </ul>
+                <i class="mt-2 block text-xs text-blue-600">Fuera de estos horarios y los domingos, solo la Farmacia de Turno indicada arriba ofrece atención de guardia 24 hs.</i>
+            </p>
+        </section>
 
         <footer class="mt-12 text-center text-sm text-gray-400">
             <p>&copy; <span id="current-year"></span> Farmacias de Turno. Data provided locally. (Datos de Farmacias actualizados con info web de referencia).</p>
@@ -208,7 +232,7 @@
             };
         }
 
-        // Función para renderizar la información en el DOM (NO NECESITÓ CAMBIOS MAYORES)
+        // Función para renderizar la información en el DOM
         function renderPharmacy(pharmacy) {
             const cardElement = document.getElementById('pharmacy-card');
             const messageElement = document.getElementById('message-area');
@@ -223,7 +247,7 @@
                     <div class="text-center p-8 bg-yellow-50 rounded-lg border border-yellow-200">
                         <svg class="w-12 h-12 text-yellow-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.372 17c-.77 1.333.192 3 1.732 3z"></path></svg>
                         <h2 class="text-xl font-bold text-yellow-700 mb-2">Información No Encontrada</h2>
-                        <p class="text-gray-600">No hemos encontrado la farmacia de turno para la fecha de hoy. El calendario de ejemplo está limitado a Noviembre de 2025. Por favor, verifica la fecha o la lista de turnos (SCHEDULE_DAYS).</p>
+                        <p class="text-gray-600">No hemos encontrado la farmacia de turno para la fecha de hoy</p>
                     </div>
                 `;
                 return;
