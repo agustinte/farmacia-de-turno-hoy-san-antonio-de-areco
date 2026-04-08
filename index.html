@@ -7,29 +7,22 @@
     <title>Farmacia de Turno HOY en San Antonio de Areco - Horarios y Ubicación</title>
 
     <!-- Script de Google Analytics 4 (GA4) para seguimiento de visitas -->
-    <!-- 
-        INSTRUCCIÓN IMPORTANTE: 
-        Reemplaza 'G-XXXXXXXXXX' con tu ID de Medición de Google Analytics 
-        (lo obtienes al crear una propiedad para tu sitio en Google Analytics).
-    -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX'); // Reemplazar con tu ID de Medición
+      gtag('config', 'G-XXXXXXXXXX');
     </script>
     
-    <!-- OPTIMIZACIÓN SEO: Meta descripción que aparece en los resultados de búsqueda -->
+    <!-- OPTIMIZACIÓN SEO: Meta descripción -->
     <meta name="description" content="Consulta la farmacia que está de turno hoy en San Antonio de Areco. Encuentra dirección, teléfono, y mapa actualizado para el servicio de guardia 24 horas.">
-    <!-- OPTIMIZACIÓN SEO: Palabras clave relevantes -->
     <meta name="keywords" content="farmacia de turno, san antonio de areco, farmacias de guardia, horario farmacia areco, guardia 24 horas, drogueria areco">
 
-    <!-- Carga de Tailwind CSS para el estilo -->
+    <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- OPTIMIZACIÓN SEO: JSON-LD para Datos Estructurados (Schema Markup) -->
-    <!-- Define el servicio como un Negocio Local para mayor visibilidad en búsquedas geolocalizadas -->
+    <!-- OPTIMIZACIÓN SEO: JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -64,10 +57,8 @@
         }
     </script>
     <style>
-        /* Estilos específicos para la responsividad del iframe del mapa */
         .map-embed-container {
             position: relative;
-            /* Establece una relación de aspecto de 4:3 (75%) */
             padding-bottom: 75%; 
             height: 0;
             overflow: hidden;
@@ -81,12 +72,10 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen p-4 sm:p-8 font-sans flex justify-center items-start">
+<body class="bg-gray-50 min-h-screen p-4 sm:p-8 font-sans flex justify-center items-start text-slate-900">
 
-    <!-- Contenedor Principal Centrado y Limitado -->
     <main class="w-full max-w-2xl">
         <header class="text-center mb-10">
-            <!-- H1 ya optimizado para la palabra clave principal -->
             <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-800 mb-2">
                 Farmacia de Turno
             </h1>
@@ -95,54 +84,62 @@
             </p>
         </header>
 
-        <!-- Bloque de Texto SEO Contextualizado con Estilo Mejorado (Verde) -->
-        <section class="mb-8 p-4 bg-green-50 border border-primary-green/50 rounded-xl shadow-md flex items-center">
-            <svg class="w-6 h-6 text-primary-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <!-- Bloque de Texto SEO -->
+        <section class="mb-8 p-5 bg-green-50 border border-primary-green/50 rounded-xl shadow-md flex items-start italic">
+            <svg class="w-6 h-6 text-primary-green mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             <p class="text-sm text-slate-700 leading-relaxed">
-                Bienvenido al servicio rápido de consulta de **Farmacias de Turno en San Antonio de Areco**. Aquí encontrará en tiempo real cuál es la **Farmacia de Guardia** con servicio **turno 24 horas** a partir de las 8 AM. Consulte la dirección, el teléfono y la ubicación exacta para recibir atención farmacéutica inmediata.
+                Bienvenido al servicio rápido de consulta de <strong>Farmacias de Turno en San Antonio de Areco</strong>. Aquí encontrará en tiempo real cuál es la <strong>Farmacia de Guardia</strong> con servicio <strong>turno 24 horas</strong> a partir de las 8 AM. Consulte la dirección, el teléfono y la ubicación exacta para recibir atención farmacéutica inmediata.
             </p>
         </section>
 
-        <!-- Tarjeta de Farmacia de Turno -->
+        <!-- Tarjeta de Farmacia de Turno HOY -->
         <div id="pharmacy-card" class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border-t-4 border-primary-green transition-all duration-300">
-            <!-- El contenido se cargará aquí con JavaScript -->
+            <!-- Cargado por JS -->
         </div>
+
+        <!-- Región con las próximas tres farmacias (HORIZONTALES) -->
+        <section id="upcoming-section" class="mt-12 hidden">
+            <h3 class="text-xl font-bold text-slate-800 mb-4 px-2 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-4 4V3m-6 4h12M6 11h12M6 15h12M6 19h12"></path></svg>
+                Próximos Turnos
+            </h3>
+            <div id="upcoming-list" class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <!-- Cargado por JS -->
+            </div>
+        </section>
         
-        <!-- Mensaje de Carga/Error (Oculto por defecto) -->
         <div id="message-area" class="mt-8 text-center p-4 text-gray-500 hidden">
             Cargando la información...
         </div>
 
-        <!-- NUEVO: Bloque de Información de Horarios Diurnos Regulares (Azul) - Ubicado debajo del contenido principal -->
-        <section class="mt-8 mb-8 p-4 bg-blue-50 border border-blue-200 rounded-xl shadow-sm">
-            <h3 class="text-lg font-bold text-blue-800 mb-2 flex items-center">
-                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <!-- Horarios Diurnos - RESTAURADO -->
+        <section class="mt-10 mb-8 p-5 bg-blue-50 border border-blue-200 rounded-xl shadow-sm">
+            <h3 class="text-lg font-bold text-blue-800 mb-3 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 Horarios de Atención Normal (Diurna)
             </h3>
-            <p class="text-sm text-slate-700 leading-relaxed">
-                Todas las Farmacias en San Antonio de Areco atienden en los siguientes horarios:
-                <ul class="list-disc list-inside ml-2 mt-2 space-y-1">
-                    <li><span class="font-semibold">Lunes a Viernes:</span> 8:00 a 12:30 y de 16:00 a 19:30</li>
-                    <li><span class="font-semibold">Sábados:</span> 8:30 a 12:30</li>
+            <div class="text-sm text-slate-700 leading-relaxed">
+                <p class="mb-3">Todas las Farmacias en San Antonio de Areco atienden en los siguientes horarios:</p>
+                <ul class="list-none space-y-1 mb-3">
+                    <li><span class="font-bold">Lunes a Viernes:</span> 8:00 a 12:30 y de 16:00 a 19:30</li>
+                    <li><span class="font-bold">Sábados:</span> 8:30 a 12:30</li>
                 </ul>
-                <i class="mt-2 block text-xs text-blue-600">Fuera de estos horarios y los domingos, solo la Farmacia de Turno indicada arriba ofrece atención de guardia 24 hs.</i>
-            </p>
+                <p class="text-xs text-blue-700/80 italic">
+                    Fuera de estos horarios y los domingos, solo la Farmacia de Turno indicada arriba ofrece atención de guardia 24 hs.
+                </p>
+            </div>
         </section>
 
-        <footer class="mt-12 text-center text-sm text-gray-400">
-            <p>&copy; <span id="current-year"></span> Farmacias de Turno. Data provided locally. (Datos de Farmacias actualizados con info web de referencia).</p>
+        <footer class="mt-12 text-center text-sm text-gray-400 mb-10">
+            <p>&copy; <span id="current-year"></span> Farmacias de Turno San Antonio de Areco.</p>
         </footer>
     </main>
 
     <script>
-        // ----------------------------------------------------
-        // 1. DATA: FUENTES DE DATOS SEPARADAS
-        // ----------------------------------------------------
-        
-        // A. Base de datos de Farmacias (Datos estáticos y permanentes con info real de referencia)
+        // DATA
         const PHARMACIES = [
             { id: '1', name: 'Farmacia Bauer', address: 'Alvear 456, San Antonio de Areco', phone: '(02326) 50-9342' },
-            { id: '2', name: 'Farmacia Berola', address: 'Alsina 550 (esquina Av. Vieytes), San Antonio de Areco', phone: '(02326) 45-5696' },
+            { id: '2', name: 'Farmacia Berola', address: 'Alsina 550 (esq. Av. Vieytes), San Antonio de Areco', phone: '(02326) 45-5696' },
             { id: '3', name: 'Farmacia Del Pueblo', address: 'Alsina Esq. Mitre 152, San Antonio de Areco', phone: '(02326) 45-2140' },
             { id: '4', name: 'Farmacia Fattore', address: 'Moreno y Alem, San Antonio de Areco', phone: '–' },
             { id: '5', name: 'Farmacia Risolino', address: 'Arellano y San Martín, San Antonio de Areco', phone: '–' },
@@ -151,94 +148,25 @@
             { id: '8', name: 'Farmacia Bobbett', address: 'Zapiola 499, San Antonio de Areco', phone: '(02326) 45-5988' }
         ];
 
-
-        // B. Calendario de Turnos (Asigna una fecha a un ID de farmacia)
-        // Formato de fecha: YYYY-MM-DD
         const SCHEDULE_DAYS = [
-            { date: '2026-02-14', pharmacyId: '7' }, // Torra
-            { date: '2026-02-15', pharmacyId: '5' }, // Risolino
-            { date: '2026-02-16', pharmacyId: '8' }, // Bobbett
-            { date: '2026-02-17', pharmacyId: '6' }, // Rodríguez Scheys
-            { date: '2026-02-18', pharmacyId: '7' }, // Torra
-            { date: '2026-02-19', pharmacyId: '6' }, // Rodríguez Scheys
-            { date: '2026-02-20', pharmacyId: '1' }, // Bauer
-            { date: '2026-02-21', pharmacyId: '8' }, // Bobbett
-            { date: '2026-02-22', pharmacyId: '7' }, // Torra
-            { date: '2026-02-23', pharmacyId: '2' }, // Berola
-            { date: '2026-02-24', pharmacyId: '8' }, // Bobbett
-            { date: '2026-02-25', pharmacyId: '6' }, // Rodríguez Scheys
-            { date: '2026-02-26', pharmacyId: '3' }, // Del Pueblo
-            { date: '2026-02-27', pharmacyId: '2' }, // Berola
-            { date: '2026-02-28', pharmacyId: '1' },  // Bauer
-            { date: '2026-03-01', pharmacyId: '5' }, // RISOLINO
-              { date: '2026-03-02', pharmacyId: '7' }, // TORRA
-              { date: '2026-03-03', pharmacyId: '2' }, // BEROLA
-              { date: '2026-03-04', pharmacyId: '8' }, // BOBBETT
-              { date: '2026-03-05', pharmacyId: '6' }, // R SCHEYS
-              { date: '2026-03-06', pharmacyId: '3' }, // DEL PUEBLO
-              { date: '2026-03-07', pharmacyId: '4' }, // FATTORE
-              { date: '2026-03-08', pharmacyId: '1' }, // BAUER
-              { date: '2026-03-09', pharmacyId: '5' }, // RISOLINO
-              { date: '2026-03-10', pharmacyId: '3' }, // DEL PUEBLO
-              { date: '2026-03-11', pharmacyId: '2' }, // BEROLA
-              { date: '2026-03-12', pharmacyId: '8' }, // BOBBETT
-              { date: '2026-03-13', pharmacyId: '6' }, // R SCHEYS
-              { date: '2026-03-14', pharmacyId: '3' }, // DEL PUEBLO
-              { date: '2026-03-15', pharmacyId: '4' }, // FATTORE
-              { date: '2026-03-16', pharmacyId: '1' }, // BAUER
-              { date: '2026-03-17', pharmacyId: '5' }, // RISOLINO
-              { date: '2026-03-18', pharmacyId: '3' }, // DEL PUEBLO
-              { date: '2026-03-19', pharmacyId: '2' }, // BEROLA
-              { date: '2026-03-20', pharmacyId: '8' }, // BOBBETT
-              { date: '2026-03-21', pharmacyId: '6' }, // R SCHEYS
-              { date: '2026-03-22', pharmacyId: '3' }, // DEL PUEBLO
-              { date: '2026-03-23', pharmacyId: '4' }, // FATTORE
-              { date: '2026-03-24', pharmacyId: '1' }, // BAUER
-              { date: '2026-03-25', pharmacyId: '5' }, // RISOLINO
-              { date: '2026-03-26', pharmacyId: '7' }, // TORRA
-              { date: '2026-03-27', pharmacyId: '2' }, // BEROLA
-              { date: '2026-03-28', pharmacyId: '8' }, // BOBBETT
-              { date: '2026-03-29', pharmacyId: '6' }, // R SCHEYS
-              { date: '2026-03-30', pharmacyId: '3' }, // DEL PUEBLO
-              { date: '2026-03-31', pharmacyId: '4' },  // FATTORE
-             { date: '2025-04-01', pharmacyId: '1' }, // Bauer
-  { date: '2026-04-02', pharmacyId: '5' }, // Risolino
-  { date: '2026-04-03', pharmacyId: '7' }, // Torra
-  { date: '2026-04-04', pharmacyId: '2' }, // Berola
-  { date: '2026-04-05', pharmacyId: '8' }, // Bobbett
-  { date: '2026-04-06', pharmacyId: '6' }, // R Scheys
-  { date: '2026-04-07', pharmacyId: '3' }, // Del Pueblo
-  { date: '2026-04-08', pharmacyId: '4' }, // Fattore
-  { date: '2026-04-09', pharmacyId: '1' }, // Bauer
-  { date: '2026-04-10', pharmacyId: '5' }, // Risolino
-  { date: '2026-04-11', pharmacyId: '7' }, // Torra
-  { date: '2026-04-12', pharmacyId: '2' }, // Berola
-  { date: '2026-04-13', pharmacyId: '8' }, // Bobbett
-  { date: '2026-04-14', pharmacyId: '6' }, // R Scheys
-  { date: '2026-04-15', pharmacyId: '3' }, // Del Pueblo
-  { date: '2026-04-16', pharmacyId: '4' }, // Fattore
-  { date: '2026-04-17', pharmacyId: '1' }, // Bauer
-  { date: '2026-04-18', pharmacyId: '5' }, // Risolino
-  { date: '2026-04-19', pharmacyId: '7' }, // Torra
-  { date: '2026-04-20', pharmacyId: '2' }, // Berola
-  { date: '2026-04-21', pharmacyId: '8' }, // Bobbett
-  { date: '2026-04-22', pharmacyId: '6' }, // R Scheys
-  { date: '2026-04-23', pharmacyId: '3' }, // Del Pueblo
-  { date: '2026-04-24', pharmacyId: '4' }, // Fattore
-  { date: '2026-04-25', pharmacyId: '1' }, // Bauer
-  { date: '2026-04-26', pharmacyId: '5' }, // Risolino
-  { date: '2026-04-27', pharmacyId: '7' }, // Torra
-  { date: '2026-04-28', pharmacyId: '2' }, // Berola
-  { date: '2026-04-29', pharmacyId: '8' }, // Bobbett
-  { date: '2026-04-30', pharmacyId: '6' }  // R Scheys
+            { date: '2026-04-01', pharmacyId: '1' }, { date: '2026-04-02', pharmacyId: '5' },
+            { date: '2026-04-03', pharmacyId: '7' }, { date: '2026-04-04', pharmacyId: '2' },
+            { date: '2026-04-05', pharmacyId: '8' }, { date: '2026-04-06', pharmacyId: '6' },
+            { date: '2026-04-07', pharmacyId: '3' }, { date: '2026-04-08', pharmacyId: '4' },
+            { date: '2026-04-09', pharmacyId: '1' }, { date: '2026-04-10', pharmacyId: '5' },
+            { date: '2026-04-11', pharmacyId: '7' }, { date: '2026-04-12', pharmacyId: '2' },
+            { date: '2026-04-13', pharmacyId: '8' }, { date: '2026-04-14', pharmacyId: '6' },
+            { date: '2026-04-15', pharmacyId: '3' }, { date: '2026-04-16', pharmacyId: '4' },
+            { date: '2026-04-17', pharmacyId: '1' }, { date: '2026-04-18', pharmacyId: '5' },
+            { date: '2026-04-19', pharmacyId: '7' }, { date: '2026-04-20', pharmacyId: '2' },
+            { date: '2026-04-21', pharmacyId: '8' }, { date: '2026-04-22', pharmacyId: '6' },
+            { date: '2026-04-23', pharmacyId: '3' }, { date: '2026-04-24', pharmacyId: '4' },
+            { date: '2026-04-25', pharmacyId: '1' }, { date: '2026-04-26', pharmacyId: '5' },
+            { date: '2026-04-27', pharmacyId: '7' }, { date: '2026-04-28', pharmacyId: '2' },
+            { date: '2026-04-29', pharmacyId: '8' }, { date: '2026-04-30', pharmacyId: '6' }
         ];
 
-
-        // ----------------------------------------------------
-        // 2. LOGIC: FUNCIONES PRINCIPALES
-        // ----------------------------------------------------
-
-        // Función para obtener la fecha de hoy en formato YYYY-MM-DD (Ej: 2025-11-07)
+        // LOGIC
         function getDateString(date) {
             const year = date.getFullYear();
             const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -246,185 +174,117 @@
             return `${year}-${month}-${day}`;
         }
 
-        // Función para obtener la farmacia de turno para el día de hoy (UNE los dos datasets)
-        function getTodayPharmacy() {
-            // Nota: Para simular una fecha dentro del calendario de turnos (Nov 2025), 
-            // se puede cambiar 'today' por una fecha fija si es necesario.
-            // Por ejemplo: const today = new Date('2025-11-10');
-            const today = new Date();
-            const todayString = getDateString(today);
-            
-            // 1. Buscar la entrada del día de hoy en el calendario
-            const scheduleEntry = SCHEDULE_DAYS.find(item => item.date === todayString);
-
-            if (!scheduleEntry) {
-                return null; // No hay turno programado
-            }
-            
-            // 2. Buscar los detalles de la farmacia usando el ID
-            const pharmacyDetails = PHARMACIES.find(p => p.id === scheduleEntry.pharmacyId);
-
-            if (!pharmacyDetails) {
-                // Esto indica un error en la configuración: un ID en SCHEDULE_DAYS no existe en PHARMACIES
-                console.error(`ERROR: ID de farmacia no encontrado: ${scheduleEntry.pharmacyId}`);
-                return null; 
-            }
-            
-            // 3. Devolver un objeto combinado con todos los datos necesarios
-            return {
-                date: scheduleEntry.date,
-                name: pharmacyDetails.name,
-                address: pharmacyDetails.address,
-                phone: pharmacyDetails.phone
-            };
+        function getPharmacyForDate(dateObj) {
+            const dateStr = getDateString(dateObj);
+            const entry = SCHEDULE_DAYS.find(item => item.date === dateStr);
+            if (!entry) return null;
+            const details = PHARMACIES.find(p => p.id === entry.pharmacyId);
+            return details ? { ...details, date: entry.date } : null;
         }
 
-        // Función para renderizar la información en el DOM
-        function renderPharmacy(pharmacy) {
+        function formatDateForDisplay(dateString, isShort = false) {
+            const [year, month, day] = dateString.split('-');
+            const date = new Date(year, month - 1, day);
+            if (isShort) {
+                return date.toLocaleDateString('es-AR', { weekday: 'short', day: 'numeric' });
+            }
+            return date.toLocaleDateString('es-AR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        // RENDERING
+        function renderToday() {
+            const today = new Date();
+            const pharmacy = getPharmacyForDate(today);
             const cardElement = document.getElementById('pharmacy-card');
-            const messageElement = document.getElementById('message-area');
-            
-            // Limpiar contenido anterior
-            cardElement.innerHTML = '';
-            messageElement.classList.add('hidden');
 
             if (!pharmacy) {
-                // Si no se encuentra la farmacia
-                cardElement.innerHTML = `
-                    <div class="text-center p-8 bg-yellow-50 rounded-lg border border-yellow-200">
-                        <svg class="w-12 h-12 text-yellow-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.372 17c-.77 1.333.192 3 1.732 3z"></path></svg>
-                        <h2 class="text-xl font-bold text-yellow-700 mb-2">Información No Encontrada</h2>
-                        <p class="text-gray-600">No hemos encontrado la farmacia de turno para la fecha de hoy</p>
-                    </div>
-                `;
+                cardElement.innerHTML = `<p class="text-center text-gray-500 py-10">No hay turnos registrados para hoy.</p>`;
                 return;
             }
 
-            // Sanitizar la dirección para el link de Google Maps y el iframe
-            // Se usa solo la dirección específica de la farmacia (sin la ciudad repetida)
             const mapAddress = encodeURIComponent(pharmacy.address);
-            const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapAddress}`;
-            
-            // Determinar si el teléfono es un link clickeable
-            const isPhoneAvailable = pharmacy.phone && pharmacy.phone.trim() !== '–';
-            const phoneContent = isPhoneAvailable 
-                ? `<a href="tel:${pharmacy.phone.replace(/[\(\)-\s]/g, '')}" class="text-lg font-semibold text-primary-green hover:text-green-600 transition-colors">${pharmacy.phone}</a>`
+            const isPhoneAvailable = pharmacy.phone && pharmacy.phone !== '–';
+            const phoneHTML = isPhoneAvailable 
+                ? `<a href="tel:${pharmacy.phone.replace(/\D/g,'')}" class="text-lg font-semibold text-primary-green">${pharmacy.phone}</a>`
                 : `<p class="text-lg font-semibold text-slate-700">No disponible</p>`;
 
-            // Generar el HTML para la tarjeta
             cardElement.innerHTML = `
-                <div class="flex items-center mb-4">
+                <div class="flex items-center mb-6">
                     <div class="p-3 bg-primary-green/20 rounded-full mr-4">
-                        <!-- Icono de Cruz Médica -->
-                        <svg class="w-8 h-8 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <svg class="w-8 h-8 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <h2 class="text-3xl font-bold text-slate-900">${pharmacy.name}</h2>
+                    <div>
+                        <span class="text-[10px] font-bold text-primary-green uppercase tracking-widest block mb-0.5">Turno de Hoy</span>
+                        <h2 class="text-3xl font-bold text-slate-900">${pharmacy.name}</h2>
+                    </div>
                 </div>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
-                    <!-- Dirección -->
-                    <div class="flex flex-col p-4 bg-light-card rounded-xl">
-                        <span class="text-sm font-medium text-slate-500 mb-1 flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            Dirección
-                        </span>
-                        <p class="text-lg font-semibold text-slate-700">${pharmacy.address}</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                    <div class="p-4 bg-light-card rounded-xl text-center sm:text-left">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase mb-1 block">Dirección</span>
+                        <p class="text-md font-bold text-slate-700 leading-tight">${pharmacy.address}</p>
                     </div>
-
-                    <!-- Teléfono -->
-                    <div class="flex flex-col p-4 bg-light-card rounded-xl">
-                        <span class="text-sm font-medium text-slate-500 mb-1 flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.128a11.042 11.042 0 005.516 5.516l1.128-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                            Teléfono
-                        </span>
-                        ${phoneContent}
+                    <div class="p-4 bg-light-card rounded-xl text-center sm:text-left">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase mb-1 block">Teléfono</span>
+                        ${phoneHTML}
                     </div>
-                    
-                    <!-- Fecha -->
-                    <div class="flex flex-col p-4 bg-light-card rounded-xl">
-                        <span class="text-sm font-medium text-slate-500 mb-1 flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-4 4V3m-6 4h12M6 11h12M6 15h12M6 19h12"></path></svg>
-                            Fecha de Inicio del Turno (*)
-                        </span>
-                        <p class="text-lg font-semibold text-slate-700">${formatDateForDisplay(pharmacy.date)}</p>
+                    <div class="p-4 bg-light-card rounded-xl text-center sm:text-left">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase mb-1 block">Fecha Turno</span>
+                        <p class="text-md font-bold text-slate-700 leading-tight">${formatDateForDisplay(pharmacy.date)}</p>
                     </div>
                 </div>
 
-                <!-- NOTA DEL TURNO -->
-                <p class="text-md text-slate-600 pt-6 border-t border-gray-100 mb-8">
-                    * El turno es de 24 horas y rige <span class="font-semibold text-slate-800">a partir de las 8:00 AM del día indicado</span> hasta las 8:00 AM del día siguiente.
-                </p>
+                <div class="mb-6 p-3 bg-slate-50 border-l-4 border-slate-300 rounded-r-lg">
+                    <p class="text-sm text-slate-600 leading-snug">
+                        * El turno es de <strong>24 horas</strong> y rige <strong>a partir de las 8:00 AM</strong> del día indicado hasta las 8:00 AM del día siguiente.
+                    </p>
+                </div>
 
-                <!-- Mapa Embebido -->
-                <div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center">
-                        <svg class="w-6 h-6 mr-2 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        Ubicación
-                    </h3>
-                    <!-- Contenedor del Mapa Responsive (clase map-embed-container definida en <style>) -->
-                    <div class="map-embed-container rounded-xl shadow-lg">
-                        <iframe
-                            class="rounded-xl"
-                            src="https://maps.google.com/maps?q=${mapAddress}&output=embed&z=15"
-                            frameborder="0"
-                            style="border:0;"
-                            allowfullscreen=""
-                            aria-hidden="false"
-                            tabindex="0"
-                        ></iframe>
-                    </div>
-                    <a href="${mapLink}" target="_blank" class="mt-3 block text-center text-sm font-medium text-primary-green hover:text-green-600 transition-colors">
-                        Abrir en Google Maps (Pantalla Completa)
-                    </a>
+                <div class="map-embed-container rounded-xl shadow-inner border border-slate-100">
+                    <iframe src="https://maps.google.com/maps?q=${mapAddress}&output=embed&z=16" frameborder="0"></iframe>
                 </div>
             `;
         }
-        
-        // Función auxiliar para formatear la fecha para la UI
-        function formatDateForDisplay(dateString) {
-            try {
-                const [year, month, day] = dateString.split('-');
-                const date = new Date(year, month - 1, day);
-                // Configuración regional para mostrar el día y mes en español
-                return date.toLocaleDateString('es-AR', { 
-                    weekday: 'long', 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                });
-            } catch (e) {
-                return dateString; // Retornar el string si hay error
+
+        function renderUpcoming() {
+            const listContainer = document.getElementById('upcoming-list');
+            const section = document.getElementById('upcoming-section');
+            let html = '';
+
+            for (let i = 1; i <= 3; i++) {
+                const nextDate = new Date();
+                nextDate.setDate(nextDate.getDate() + i);
+                const pharmacy = getPharmacyForDate(nextDate);
+
+                if (pharmacy) {
+                    const dateLabel = i === 1 ? 'Mañana' : formatDateForDisplay(pharmacy.date, true);
+                    html += `
+                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <span class="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest block mb-1">${dateLabel}</span>
+                                <h4 class="text-sm font-bold text-slate-800 mb-1 leading-tight">${pharmacy.name}</h4>
+                                <p class="text-[11px] text-slate-500 leading-tight mb-2">${pharmacy.address}</p>
+                            </div>
+                            <div class="mt-auto pt-2 border-t border-slate-50">
+                                <span class="text-[10px] font-medium text-slate-400">${pharmacy.phone !== '–' ? pharmacy.phone : 'Sin tel.'}</span>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            if (html) {
+                listContainer.innerHTML = html;
+                section.classList.remove('hidden');
             }
         }
-        
-        // Función de inicialización
-        function init() {
-            try {
-                const todayPharmacy = getTodayPharmacy();
-                renderPharmacy(todayPharmacy);
-            } catch (error) {
-                console.error("Error al inicializar la aplicación:", error);
-                document.getElementById('message-area').innerHTML = `
-                    <p class="text-red-500 font-bold">Ocurrió un error al cargar los datos.</p>
-                `;
-                document.getElementById('message-area').classList.remove('hidden');
-            }
-            
-            // Establecer el año actual en el footer
+
+        // INIT
+        window.onload = () => {
+            renderToday();
+            renderUpcoming();
             document.getElementById('current-year').textContent = new Date().getFullYear();
-        }
-
-        // ----------------------------------------------------
-        // 3. START: INICIAR AL CARGAR LA PÁGINA
-        // ----------------------------------------------------
-        window.onload = init;
-
+        };
     </script>
 </body>
 </html>
-
-
-
-
-
-
