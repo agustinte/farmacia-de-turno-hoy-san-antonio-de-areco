@@ -10,7 +10,7 @@ Google Analytics:
 ## Cuenta de correo
 
 Publicidad Farmacias Turno
-[publicidad.farmacias.areco@gmail.com](mailto:publicidad.farmacias.turno@gmail.com)
+[publicidad.farmacias.turno@gmail.com](mailto:publicidad.farmacias.turno@gmail.com)
 
 ## Base de farmacias
 
