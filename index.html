@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- OPTIMIZACIÓN SEO: Título descriptivo y con foco en la búsqueda -->
-    <title>Farmacia de Turno Hoy en San Antonio de Areco | Horarios y Dirección</title>
-    <link rel="canonical" href="https://agustinte.github.io/farmacia-de-turno-hoy-san-antonio-de-areco/" />
+    <title>Farmacia de Turno Hoy en Baradero | Horarios y Dirección</title>
+    <link rel="canonical" href="https://agustinte.github.io/farmacia-de-turno-hoy-baradero/" />
 
     <!-- Script de Google Analytics 4 (GA4) para seguimiento de visitas -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-022WMVQQQR"></script>
@@ -17,8 +17,8 @@
     </script>
     
     <!-- OPTIMIZACIÓN SEO: Meta descripción -->
-    <meta name="description" content="Consulta la farmacia que está de turno hoy en San Antonio de Areco. Encuentra dirección, teléfono, y mapa actualizado para el servicio de guardia 24 horas.">
-    <meta name="keywords" content="farmacia de turno, san antonio de areco, farmacias de guardia, horario farmacia areco, guardia 24 horas, drogueria areco">
+    <meta name="description" content="Consulta la farmacia que está de turno hoy en Baradero. Encuentra dirección, teléfono y ubicación actualizada para guardias 24 horas.">
+    <meta name="keywords" content="farmacia de turno, baradero, farmacias de guardia, horario farmacia baradero, guardia 24 horas">
 
     <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,20 +28,34 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Farmacias de Turno San Antonio de Areco",
-      "description": "Servicio de información en tiempo real sobre la farmacia de guardia (de turno) en San Antonio de Areco, Provincia de Buenos Aires.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "San Antonio de Areco",
-        "addressRegion": "Buenos Aires",
-        "addressCountry": "AR"
-      },
-      "areaServed": "San Antonio de Areco",
+      "name": "Farmacias de Turno Baradero",
+	  "description": "Servicio de información en tiempo real sobre la farmacia de guardia en Baradero, Provincia de Buenos Aires.",
+	  "address": {
+		  "@type": "PostalAddress",
+		  "addressLocality": "Baradero",
+		  "addressRegion": "Buenos Aires",
+		  "addressCountry": "AR"
+		},
+	  "areaServed": "Baradero"
       "image": "https://placehold.co/400x200/34D399/ffffff?text=Farmacia+Turno"
     }
     </script>
 
     <script>
+		function updateLastUpdatedTimestamp() {
+			const ahora = new Date();
+			
+			// Formatear la fecha: "23 de abril de 2026"
+			const fechaOpciones = { day: 'numeric', month: 'long', year: 'numeric' };
+			const fechaFormateada = ahora.toLocaleDateString('es-AR', fechaOpciones);
+			
+			// Formatear la hora: "08:15"
+			const horas = String(ahora.getHours()).padStart(2, '0');
+			const minutos = String(ahora.getMinutes()).padStart(2, '0');
+			
+			const mensaje = `Actualizado hoy: ${fechaFormateada} – ${horas}:${minutos} hs`;
+			document.getElementById('last-update').textContent = mensaje;
+		}
         tailwind.config = {
             theme: {
                 extend: {
@@ -78,21 +92,22 @@
     <main class="w-full max-w-2xl">
         <header class="text-center mb-5">
             <h1 class="text-3xl sm:text-3xl font-extrabold text-slate-800 mb-2">
-              Farmacia de turno hoy en San Antonio de Areco
+                Farmacia de turno hoy en Baradero
             </h1>
+			<p id="last-update" class="text-sm text-slate-500 font-medium"></p>
         </header>
 
         <!-- Bloque de Texto SEO -->
         <section class="mb-4 p-5 bg-green-50 border border-primary-green/50 rounded-xl shadow-md flex items-start italic">
             <svg class="w-6 h-6 text-primary-green mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             <p class="text-sm text-slate-700 leading-relaxed">
-                Servicio rápido de consulta de <strong>Farmacias de Turno en San Antonio de Areco</strong>. Encontrará en tiempo real cuál es la <strong>Farmacia de Guardia</strong> con servicio <strong>turno 24 horas</strong>. Consulte la dirección, el teléfono y la ubicación exacta para recibir atención farmacéutica inmediata.
+                Servicio rápido de consulta de <strong>Farmacias de Turno en Baradero</strong>. Encontrará en tiempo real cuál es la <strong>Farmacia de Guardia</strong> con servicio <strong>turno 24 horas</strong>. Consulte la dirección, el teléfono y la ubicación exacta para recibir atención farmacéutica inmediata.
             </p>
         </section>
 
 		<div class="mt-1 text-center">
 		  <a 
-			href="mailto:publicidad.farmacias.turno@gmail.com?subject=Publicidad%20Farmacias%20-%20Areco"
+			href="mailto:publicidad.farmacias.turno@gmail.com?subject=Publicidad%20Farmacias%20-%20Baradero"
 			class="text-sm text-primary-green font-semibold hover:underline"
 		  >
 			¿Querés publicitar tu farmacia? Contactanos
@@ -127,7 +142,7 @@
                 Horarios de Atención Normal (Diurna)
             </h3>
             <div class="text-sm text-slate-700 leading-relaxed">
-                <p class="mb-3">Todas las Farmacias en San Antonio de Areco atienden en los siguientes horarios:</p>
+                <p class="mb-3">Todas las Farmacias en Baradero atienden en los siguientes horarios:</p>
                 <ul class="list-none space-y-1 mb-3">
                     <li><span class="font-bold">Lunes a Viernes:</span> 8:00 a 12:30 y de 16:00 a 19:30</li>
                     <li><span class="font-bold">Sábados:</span> 8:30 a 12:30</li>
@@ -139,40 +154,62 @@
         </section>
 
         <footer class="mt-12 text-center text-sm text-gray-400 mb-10">
-            <p>&copy; <span id="current-year"></span> Farmacias de Turno San Antonio de Areco.</p>
+            <p>&copy; <span id="current-year"></span> Farmacias de Turno Baradero.</p>
         </footer>
     </main>
 
     <script>
         // DATA
         const PHARMACIES = [
-            { id: '1', name: 'Farmacia Bauer', address: 'Alvear 456, San Antonio de Areco', phone: '(02326) 50-9342' },
-            { id: '2', name: 'Farmacia Berola', address: 'Alsina 550 (esq. Av. Vieytes), San Antonio de Areco', phone: '(02326) 45-5696' },
-            { id: '3', name: 'Farmacia Del Pueblo', address: 'Alsina Esq. Mitre 152, San Antonio de Areco', phone: '(02326) 45-2140' },
-            { id: '4', name: 'Farmacia Fattore', address: 'Moreno y Alem, San Antonio de Areco', phone: '–' },
-            { id: '5', name: 'Farmacia Risolino', address: 'Arellano y San Martín, San Antonio de Areco', phone: '–' },
-            { id: '6', name: 'Farmacia Rodríguez Scheys', address: 'Av. Vieytes Esq. Rivadavia 549, San Antonio de Areco', phone: '(02326) 45-2005' },
-            { id: '7', name: 'Farmacia Torra', address: 'Azcuénaga 359, San Antonio de Areco', phone: '(02326) 45-2253' },
-            { id: '8', name: 'Farmacia Bobbett', address: 'Zapiola 499, San Antonio de Areco', phone: '(02326) 45-5988' }
-        ];
+		  { id: '1', name: 'Farmacia Amartino', address: "J. O'Roarke 2408, Baradero", phone: '(03329) 480263' },
+		  { id: '2', name: 'Farmacia Anchorena', address: 'Bulnes 601, Baradero', phone: '(03329) 480233' },
+		  { id: '3', name: 'Farmacia Boedo', address: 'Sta. M. de Oro 811, Baradero', phone: '(03329) 485671' },
+		  { id: '4', name: 'Farmacia Bolaños', address: 'Lino Piñeiro 279, Baradero', phone: '(03329) 482403' },
+		  { id: '5', name: 'Farmacia Braillard', address: 'Mariano Moreno 1239, Baradero', phone: '(03329) 486879' },
+		  { id: '6', name: 'Farmacia Chervaz', address: 'Carrasco 144, Baradero', phone: '(03329) 484982' },
+		  { id: '7', name: 'Farmacia Daubian', address: 'Aráoz 1101, Baradero', phone: '(03329) 483323' },
+		  { id: '8', name: 'Farmacia Del Pueblo', address: 'Anchorena 1101, Baradero', phone: '(03329) 480165' },
+		  { id: '9', name: 'Farmacia Del Varadero', address: 'San Martín 1701, Baradero', phone: '(03329) 480324' },
+		  { id: '10', name: 'Farmacia Italiana', address: 'Sta. M. de Oro 481, Baradero', phone: '(03329) 480112' },
+		  { id: '11', name: 'Farmacia La Fe', address: 'Gorriti 1401, Baradero', phone: '(03329) 484190' },
+		  { id: '12', name: 'Farmacia La Popular', address: 'Sáenz 1300, Baradero', phone: '(03329) 480316' },
+		  { id: '13', name: 'Farmacia Musante', address: 'René Simón 1280, Baradero', phone: '(03329) 482615' },
+		  { id: '14', name: 'Farmacia Petruzzelli', address: 'San Martín 2125, Baradero', phone: '(03329) 480577' },
+		  { id: '15', name: 'Farmacia Silvano', address: 'Anchorena 1150, Baradero', phone: '(03329) 483907' }
+		];
 
         const SCHEDULE_DAYS = [
-            { date: '2026-04-01', pharmacyId: '1' }, { date: '2026-04-02', pharmacyId: '5' },
-            { date: '2026-04-03', pharmacyId: '7' }, { date: '2026-04-04', pharmacyId: '2' },
-            { date: '2026-04-05', pharmacyId: '8' }, { date: '2026-04-06', pharmacyId: '6' },
-            { date: '2026-04-07', pharmacyId: '3' }, { date: '2026-04-08', pharmacyId: '4' },
-            { date: '2026-04-09', pharmacyId: '1' }, { date: '2026-04-10', pharmacyId: '5' },
-            { date: '2026-04-11', pharmacyId: '7' }, { date: '2026-04-12', pharmacyId: '2' },
-            { date: '2026-04-13', pharmacyId: '8' }, { date: '2026-04-14', pharmacyId: '6' },
-            { date: '2026-04-15', pharmacyId: '3' }, { date: '2026-04-16', pharmacyId: '4' },
-            { date: '2026-04-17', pharmacyId: '1' }, { date: '2026-04-18', pharmacyId: '5' },
-            { date: '2026-04-19', pharmacyId: '7' }, { date: '2026-04-20', pharmacyId: '2' },
-            { date: '2026-04-21', pharmacyId: '8' }, { date: '2026-04-22', pharmacyId: '6' },
-            { date: '2026-04-23', pharmacyId: '3' }, { date: '2026-04-24', pharmacyId: '4' },
-            { date: '2026-04-25', pharmacyId: '1' }, { date: '2026-04-26', pharmacyId: '5' },
-            { date: '2026-04-27', pharmacyId: '7' }, { date: '2026-04-28', pharmacyId: '2' },
-            { date: '2026-04-29', pharmacyId: '8' }, { date: '2026-04-30', pharmacyId: '6' }
-        ];
+		  { date: '2026-04-01', pharmacyId: '15' },
+		  { date: '2026-04-02', pharmacyId: '5' },
+		  { date: '2026-04-03', pharmacyId: '3' },
+		  { date: '2026-04-04', pharmacyId: '4' },
+		  { date: '2026-04-05', pharmacyId: '9' },
+		  { date: '2026-04-06', pharmacyId: '12' },
+		  { date: '2026-04-07', pharmacyId: '11' },
+		  { date: '2026-04-08', pharmacyId: '5' },
+		  { date: '2026-04-09', pharmacyId: '8' },
+		  { date: '2026-04-10', pharmacyId: '3' },
+		  { date: '2026-04-11', pharmacyId: '10' },
+		  { date: '2026-04-12', pharmacyId: '7' },
+		  { date: '2026-04-13', pharmacyId: '1' },
+		  { date: '2026-04-14', pharmacyId: '6' },
+		  { date: '2026-04-15', pharmacyId: '5' },
+		  { date: '2026-04-16', pharmacyId: '15' },
+		  { date: '2026-04-17', pharmacyId: '5' },
+		  { date: '2026-04-18', pharmacyId: '3' },
+		  { date: '2026-04-19', pharmacyId: '4' },
+		  { date: '2026-04-20', pharmacyId: '9' },
+		  { date: '2026-04-21', pharmacyId: '12' },
+		  { date: '2026-04-22', pharmacyId: '11' },
+		  { date: '2026-04-23', pharmacyId: '5' },
+		  { date: '2026-04-24', pharmacyId: '8' },
+		  { date: '2026-04-25', pharmacyId: '3' },
+		  { date: '2026-04-26', pharmacyId: '10' },
+		  { date: '2026-04-27', pharmacyId: '7' },
+		  { date: '2026-04-28', pharmacyId: '1' },
+		  { date: '2026-04-29', pharmacyId: '6' },
+		  { date: '2026-04-30', pharmacyId: '5' }
+		];
 
         // LOGIC
         function getDateString(date) {
@@ -291,6 +328,7 @@
         window.onload = () => {
             renderToday();
             renderUpcoming();
+			updateLastUpdatedTimestamp();
             document.getElementById('current-year').textContent = new Date().getFullYear();
         };
     </script>
